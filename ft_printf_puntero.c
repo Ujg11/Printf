@@ -15,5 +15,27 @@
 
 int	ft_printf_puntero(void *p)
 {
-	
+	unsigned long   l;
+	int             num_char;
+
+	l = (unsigned long)p;
+	num_char = 2;
+	if (ft_printf_string("0x") == -1)
+		return (-1);
+	num_char = ft_printf_hexa(l, 0, 0, "0123456789abcdef");
+	if (num_char == -1)
+		return (-1); 
+	return (num_char);
 }
+/*
+int main(void)
+{
+	int *p;
+	int num = 2;
+	int i = 20368;
+
+	p = &num;
+	printf("Num = %p\n", p);
+	printf("Resultat = %x", i);
+	return (0);
+}*/

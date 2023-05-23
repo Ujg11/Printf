@@ -21,5 +21,6 @@ int	ft_printf(const char *format, ...);
 int	ft_printf_char(char c);
 int	ft_printf_string(char *str);
 int	ft_printf_puntero(void *p);
+int	ft_printf_hexa(unsigned long l, int i, int num_char, char *base);
 
 #endif

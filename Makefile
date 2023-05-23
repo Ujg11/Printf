@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_PATH = ../Libft
 LIBFT = $(LIBFT_PATH)/libft.a
 
-OBJECTS = ft_printf.o ft_printf_char.o ft_printf_string.o ft_printf_puntero.o ft_printf_decimal.o ft_printf_unsigned.o ft_printf_hexa_min.o ft_printf_hexa_maj.o
+OBJECTS = ft_printf.o ft_printf_char.o ft_printf_string.o ft_printf_puntero.o ft_printf_hexa.o ft_printf_decimal.o ft_printf_unsigned.o ft_printf_hexa_min.o ft_printf_hexa_maj.o
 
 all: $(NAME)
 

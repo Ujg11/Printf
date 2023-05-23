@@ -17,9 +17,11 @@ int	ft_printf_string(char *str)
 {
 	int	num_char;
 
+	if (str == NULL)
+		str = "(null)";
 	num_char = write(1, str, ft_strlen(str));
 	if (num_char < 0)
-		return (0);
+		return (-1);
 	return (num_char);
 }
 /*
