@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_printf_hexa_maj.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/23 15:33:53 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 14:29:13 by ojimenez         ###   ########.fr       */
+/*   Created: 2023/05/24 13:18:32 by ojimenez          #+#    #+#             */
+/*   Updated: 2023/05/24 14:29:25 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "./libft/libft.h"
 
-int	ft_printf_char(char c)
+int	ft_printf_hexa_maj(unsigned int n)
 {
 	int	num_char;
 
-	num_char = write(1, &c, 1);
-	if (num_char < 0)
-		return (-1);
+	num_char = ft_printf_hexa(n, 0, "0123456789ABCDEF");
 	return (num_char);
 }
-/*
-int main(void)
-{
-	char c = 'H';
-	int res;
-
-	res = ft_printf_char(c);
-	printf("\nRes ft = %d\n", res);
-	res = printf("%c", c);
-	printf("\nRes real = %d", res);
-	return (0);
-}*/

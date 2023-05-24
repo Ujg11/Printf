@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_hexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ojimenez <ojimenez@student.42barcel>       +#+  +:+       +#+        */
+/*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 23:28:59 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/23 23:28:59 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/24 14:31:38 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include "../Libft/libft.h"
+#include "ft_printf.h"
+#include "./libft/libft.h"
 
 #include <stdio.h>
 
@@ -19,14 +19,14 @@ static int	write_hexa(int i, int v[], char *base)
 {
 	int	num_char;
 	int	pos;
-	int aux;
+	int	aux;
 
 	num_char = 0;
 	while (i >= 0)
 	{
 		pos = v[i];
 		aux = write(1, &base[pos], 1);
-		if (aux < 0)
+		if (aux == -1)
 			return (-1);
 		num_char++;
 		i--;
@@ -36,20 +36,21 @@ static int	write_hexa(int i, int v[], char *base)
 
 static int	littlenum(unsigned long l, char *base)
 {
-	int num_char;
+	int	num_char;
 
 	num_char = write(1, &base[l], 1);
-	if (num_char < 0)
+	if (num_char == -1)
 		return (-1);
 	return (num_char);
 }
 
-int	ft_printf_hexa(unsigned long l, int i, int num_char, char *base)
+int	ft_printf_hexa(unsigned long l, int num_char, char *base)
 {
 	unsigned long	mod;
 	int				v[16];
-	int				pos;
+	int				i;
 
+	i = 0;
 	if (l < 16)
 		return (littlenum(l, base));
 	while (i < 16)
@@ -71,11 +72,12 @@ int	ft_printf_hexa(unsigned long l, int i, int num_char, char *base)
 		return (-1);
 	return (num_char);
 }
-
-int main(void)
+/*
+int	main(void)
 {
-	int i;
-	i = ft_printf_hexa(15, 0, 0, "0123456789abcdef");
+	int	i;
+
+	i = ft_printf_hexa(1234567, 0, "0123456789abcdef");
 	printf("\n%d", i);
 	return (0);
-}
+}*/

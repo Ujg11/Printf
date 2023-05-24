@@ -3,15 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_string.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ojimenez <ojimenez@student.42barcel>       +#+  +:+       +#+        */
+/*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:14:16 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/23 16:14:16 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/24 14:39:10 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-#include "../Libft/libft.h"
+#include "ft_printf.h"
+#include "./libft/libft.h"
+
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 int	ft_printf_string(char *str)
 {

@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_printf_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/23 15:33:53 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 14:29:13 by ojimenez         ###   ########.fr       */
+/*   Created: 2023/05/24 11:56:27 by ojimenez          #+#    #+#             */
+/*   Updated: 2023/05/24 14:29:52 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "./libft/libft.h"
 
-int	ft_printf_char(char c)
+static int	put_unsigned_nbr(unsigned int n, int *num_char)
 {
-	int	num_char;
+	unsigned int	div;
+	unsigned int	mod;
+	int				aux;
 
-	num_char = write(1, &c, 1);
-	if (num_char < 0)
+	div = n / 10;
+	mod = n % 10;
+	if (div > 0)
+		put_unsigned_nbr(div, num_char);
+	aux = ft_printf_char(mod);
+	if (aux == -1)
+		return (-1);
+	(*num_char) += aux;
+	return (1);
+}
+
+int	ft_printf_unsigned(unsigned int n)
+{
+	int	*p;
+	int	num_char;
+	int	flag;
+
+	num_char = 0;
+	p = &num_char;
+	flag = put_unsigned_nbr(n, p);
+	if (flag == -1)
 		return (-1);
 	return (num_char);
 }
-/*
-int main(void)
-{
-	char c = 'H';
-	int res;
-
-	res = ft_printf_char(c);
-	printf("\nRes ft = %d\n", res);
-	res = printf("%c", c);
-	printf("\nRes real = %d", res);
-	return (0);
-}*/
