@@ -53,7 +53,7 @@ static int	start_printf(char *str, va_list args, int num_char)
 		if (str[i] == '%')
 		{
 			aux = conversions(str[i + 1], args);
-			if (aux < 0)
+			if (aux == -1)
 				return (-1);
 			num_char = num_char + aux;
 			i++;
@@ -61,7 +61,7 @@ static int	start_printf(char *str, va_list args, int num_char)
 		else
 		{
 			aux = ft_printf_char(str[i]);
-			if (aux < 0)
+			if (aux == -1)
 				return (-1);
 			num_char = num_char + aux;
 		}
