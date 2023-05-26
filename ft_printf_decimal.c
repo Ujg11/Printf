@@ -6,13 +6,12 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:28:39 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 14:38:34 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:14:25 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "./libft/libft.h"
-
 
 static size_t	len_str(int n)
 {
@@ -128,8 +127,6 @@ char	*ft_itoa(int n)
 		str = res_str_neg(str, n, len);
 	return (str);
 }
-
-
 
 int	ft_printf_decimal(int n)
 {
