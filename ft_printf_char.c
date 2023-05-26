@@ -6,7 +6,7 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 15:33:53 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 14:29:13 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:29:15 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printf_char(char c)
 	int	num_char;
 
 	num_char = write(1, &c, 1);
-	if (num_char < 0)
+	if (num_char == -1)
 		return (-1);
 	return (num_char);
 }

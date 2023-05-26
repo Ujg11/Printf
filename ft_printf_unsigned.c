@@ -6,7 +6,7 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 11:56:27 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/26 12:11:25 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:03:31 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,15 @@ static int	put_unsigned_nbr(unsigned int n, int *num_char)
 	div = n / 10;
 	mod = n % 10;
 	if (div > 0)
-		put_unsigned_nbr(div, num_char);
+	{
+		if (put_unsigned_nbr(div, num_char) == -1)
+			return (-1);
+	}
 	aux = ft_printf_char(mod + '0');
 	if (aux == -1)
 		return (-1);
 	(*num_char) += aux;
-	return (1);
+	return (aux);
 }
 
 int	ft_printf_unsigned(unsigned int n)

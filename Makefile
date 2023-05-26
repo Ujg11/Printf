@@ -6,7 +6,7 @@
 #    By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/22 16:15:12 by ojimenez          #+#    #+#              #
-#    Updated: 2023/05/26 12:55:28 by ojimenez         ###   ########.fr        #
+#    Updated: 2023/05/26 16:58:38 by ojimenez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ $(LIBFT):
 	$(MAKE) -C $(LIBFT_PATH) all
 
 $(NAME): $(OBJECTS) $(LIBFT)
+	cp	libft/libft.a $(NAME)
 	ar rc $(NAME) $(OBJECTS) $(LIBFT)
 	ranlib $(NAME)
 

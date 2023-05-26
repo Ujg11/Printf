@@ -6,22 +6,12 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:14:16 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/26 12:15:54 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 17:02:35 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "./libft/libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
 
 int	ft_printf_string(char *str)
 {
