@@ -6,7 +6,7 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 23:28:59 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 14:31:38 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:38:50 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static int	write_hexa(int i, int v[], char *base)
 	int	aux;
 
 	num_char = 0;
+	if (v[i] == 0)
+		i--;
 	while (i >= 0)
 	{
 		pos = v[i];
@@ -44,9 +46,9 @@ static int	littlenum(unsigned long l, char *base)
 	return (num_char);
 }
 
-int	ft_printf_hexa(unsigned long l, int num_char, char *base)
+int	ft_printf_hexa(unsigned int l, int num_char, char *base)
 {
-	unsigned long	mod;
+	unsigned int	mod;
 	int				v[16];
 	int				i;
 
@@ -76,8 +78,11 @@ int	ft_printf_hexa(unsigned long l, int num_char, char *base)
 int	main(void)
 {
 	int	i;
+	int num = -10;
 
-	i = ft_printf_hexa(1234567, 0, "0123456789abcdef");
+	i = ft_printf_hexa(num, 0, "0123456789abcdef");
+	printf("\n%d", i);
+	i = printf("\nOriginal retorna: %x", num);
 	printf("\n%d", i);
 	return (0);
 }*/

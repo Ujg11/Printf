@@ -6,7 +6,7 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:48:42 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 14:33:32 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:40:31 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_printf(const char *format, ...);
 int	ft_printf_char(char c);
 int	ft_printf_string(char *str);
 int	ft_printf_puntero(void *p);
-int	ft_printf_hexa(unsigned long l, int num_char, char *base);
+int	ft_printf_hexa(unsigned int l, int num_char, char *base);
 int	ft_printf_decimal(int n);
 int	ft_printf_unsigned(unsigned int n);
 int	ft_printf_hexa_min(unsigned int n);

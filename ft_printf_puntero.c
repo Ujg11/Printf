@@ -6,7 +6,7 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:47:36 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 14:29:42 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:43:18 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_printf_puntero(void *p)
 	num_char = 2;
 	if (ft_printf_string("0x") == -1)
 		return (-1);
-	num_char = ft_printf_hexa(l, 0, "0123456789abcdef");
+	num_char = ft_printf_hexa((unsigned int)l, 0, "0123456789abcdef");
 	if (num_char == -1)
 		return (-1);
 	return (num_char);
