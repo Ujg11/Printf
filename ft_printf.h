@@ -6,7 +6,7 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:48:42 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/26 12:40:31 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:55:03 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	ft_printf_decimal(int n);
 int	ft_printf_unsigned(unsigned int n);
 int	ft_printf_hexa_min(unsigned int n);
 int	ft_printf_hexa_maj(unsigned int n);
+int	ft_printf_hexa_long(unsigned long l, int num_char, char *base);
 
 #endif

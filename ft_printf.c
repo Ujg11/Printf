@@ -6,7 +6,7 @@
 /*   By: ojimenez <ojimenez@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 13:51:40 by ojimenez          #+#    #+#             */
-/*   Updated: 2023/05/24 14:31:47 by ojimenez         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:25:19 by ojimenez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ static int	conversions(char c, va_list args)
 		num_char = ft_printf_hexa_maj(va_arg(args, unsigned int));
 	else if (c == '%')
 	{
-		write(1, "%", 1);
-		num_char = num_char + 1;
+		num_char += write(1, "%", 1);
 	}
 	else
 		return (-1);
